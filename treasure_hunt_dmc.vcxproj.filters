@@ -21,21 +21,9 @@
     <ClCompile Include="map.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tile.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="treasure.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="treasure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,15 +1,17 @@
 #ifndef MAP_H
 #define MAP_H
-#include <iostream>
-#include "tile.h"
+
+#include <array>
+#include <SFML/Graphics.hpp>
 
 
 constexpr int kRowSize = 5;
 constexpr int kColSize = 5;
 
 
-void displayMap ( std::array<Tile, kRowSize * kColSize >& map );
+int random_number();
 
 
+void DisplayMap ( std::array<int, kRowSize * kColSize >& map );
 
 #endif

@@ -1,75 +1,50 @@
-#include <iostream>
 #include <array>
+#include <SFML/Graphics.hpp>
 #include "map.h"
-#include "tile.h"
-#include "treasure.h"
-// :D
+
 
 int main()
 {
-	std::array<Tile, kRowSize* kColSize> map{};
+	std::array<int, kRowSize* kColSize> map{};
 
-	for (int idx = 0; idx < kRowSize * kColSize; ++idx)
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "Treasure Hunt!");
+	
+
+	while (window.isOpen())
 	{
-		map[idx].state_ = TileState::kNotDig;
+		sf::Texture sand_texture;
+		sand_texture.loadFromFile("sprite\\sand_tile.png");
+		sf::Sprite sand_sprite;
+		sand_sprite.setTexture(sand_texture);
+		sand_sprite.setOrigin(sand_texture.getSize().x, sand_texture.getSize().y);
+
+		sf::Texture hole_texture;
+		hole_texture.loadFromFile("sprite\\hole.png");
+		sf::Sprite hole_sprite;
+		hole_sprite.setTexture(hole_texture);
+		hole_sprite.setOrigin(hole_texture.getSize().x, hole_texture.getSize().y);
+
+		sf::Texture chest_texture;
+		chest_texture.loadFromFile("sprite\\chest.jpg");
+		sf::Sprite chest_sprite;
+		chest_sprite.setTexture(chest_texture);
+		chest_sprite.setOrigin(chest_texture.getSize().x, chest_texture.getSize().y);
+
+
+		sf::Event event;
+
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+			if (event.type == sf::Event::MouseButtonReleased)
+			{
+				
+			}
+		}
 	}
-
-	int treasureIndex = random_number();
-	std::cout << "treasure is here:" << treasureIndex << '\n';
-
-	while (true)
-	{
-		std::cout << "Enter a row between 1 and " << kColSize << " :";
-		int row;
-		while (!(std::cin >> row) || row < 1 || row > 5)
-		{
-			std::cout << "Invalid row. Please enter a value between 1 and 5 :";
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
-
-		std::cout << "Enter a column between 1 and " << kColSize << " :";
-		int col;
-		while (!(std::cin >> col) || col < 1 || col > 5)
-		{
-			std::cout << "Invalid column. Please enter a value between 1 and 5 :";
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
-
-		int idx = (row - 1) * kColSize + (col - 1);
-
-		if (idx == treasureIndex)
-		{
-			map[idx].state_ = TileState::kTreasure;
-			std::cout << "You found the treasure!" << '\n';
-
-			displayMap(map);
-
-			return EXIT_SUCCESS;
-
-		}
-		else
-		{
-			map[idx].state_ = TileState::kEmpty;
-			std::cout << "Try again :)" << '\n';
-
-			displayMap(map);
-
-		}
-
-
-		char playAgain;
-		std::cout << "Play again ? (y/n): ";
-		std::cin >> playAgain;
-
-		if (playAgain == 'n')
-		{
-			break;
-		}
-
-	}
-
+	window.clear();
+	window.display();
 	return 0;
 }
-//voir rejouabilité :)
