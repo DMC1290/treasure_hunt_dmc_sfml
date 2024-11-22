@@ -128,11 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game.cc" />
     <ClCompile Include="map.cc" />
+    <ClCompile Include="player.cc" />
+    <ClCompile Include="tile.cc" />
     <ClCompile Include="treasure_hunt_dmc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

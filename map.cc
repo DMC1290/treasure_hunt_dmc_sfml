@@ -1,8 +1,15 @@
-#include "map.h"
+
 #include <array>
+#include <ctime>
 
+#include "map.h"
 
-int random_number()
+Map::Map()
+{
+
+}
+
+int Map::RandomNumber()
 {
 	srand(time(NULL));
 
@@ -17,15 +24,17 @@ int random_number()
 	return rand() % 25;
 }
 
-void DisplayMap(std::array<int, kRowSize* kColSize>& map)
+void Map::DisplayMap(std::array<int, kRowSize* kColSize>& map)
 {
 	for (int j = 0; j < kRowSize; ++j)
 	{
-		
+
+
 	}
 
 	for(int i = 0; i < kColSize; ++i)
 	{
-		
+
+
 	}
 }

@@ -1,50 +1,18 @@
-#include <array>
-#include <SFML/Graphics.hpp>
-#include "map.h"
 
+// J'ai mis plein de commentaire si jamais c'est du troll mais de toute façon vous connaissez ça
+// mieux que moi c'est pas comme si j'allai vous apprendre qqch, meme si de base les commentaires
+// c'est des repères pour nous mêmes ou pour partager le projet avec des gens mais je vais seulement
+// le partager avec vous alors sa va mais promis prochaine sommative je vais bien faire les commentaires
 
+#include "game.h"
+
+//ça c'est le main
 int main()
 {
-	std::array<int, kRowSize* kColSize> map{};
+	Game game;
 
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "Treasure Hunt!");
+	game.GameStruct();
+	game.GameLoop();
 	
-
-	while (window.isOpen())
-	{
-		sf::Texture sand_texture;
-		sand_texture.loadFromFile("sprite\\sand_tile.png");
-		sf::Sprite sand_sprite;
-		sand_sprite.setTexture(sand_texture);
-		sand_sprite.setOrigin(sand_texture.getSize().x, sand_texture.getSize().y);
-
-		sf::Texture hole_texture;
-		hole_texture.loadFromFile("sprite\\hole.png");
-		sf::Sprite hole_sprite;
-		hole_sprite.setTexture(hole_texture);
-		hole_sprite.setOrigin(hole_texture.getSize().x, hole_texture.getSize().y);
-
-		sf::Texture chest_texture;
-		chest_texture.loadFromFile("sprite\\chest.jpg");
-		sf::Sprite chest_sprite;
-		chest_sprite.setTexture(chest_texture);
-		chest_sprite.setOrigin(chest_texture.getSize().x, chest_texture.getSize().y);
-
-
-		sf::Event event;
-
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-
-			if (event.type == sf::Event::MouseButtonReleased)
-			{
-				
-			}
-		}
-	}
-	window.clear();
-	window.display();
-	return 0;
+	return EXIT_SUCCESS;
 }
