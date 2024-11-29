@@ -30,6 +30,9 @@
     <ClCompile Include="player.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="enum_tile.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enum_tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

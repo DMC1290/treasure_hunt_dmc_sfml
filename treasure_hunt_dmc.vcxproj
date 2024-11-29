@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="enum_tile.cc" />
     <ClCompile Include="game.cc" />
     <ClCompile Include="map.cc" />
     <ClCompile Include="player.cc" />
@@ -135,6 +136,7 @@
     <ClCompile Include="treasure_hunt_dmc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="enum_tile.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="player.h" />

@@ -1,7 +1,7 @@
-#ifndef MAP_H
-#define MAP_H
+#pragma once
 
 #include <array>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 #include "tile.h"
 
@@ -11,14 +11,19 @@ constexpr int kColSize = 5;
 class Map
 {
 public:
+
 	Map();
 
-int RandomNumber();
+	void DisplayMap(sf::RenderWindow& window);
 
-void DisplayMap(std::array<int, kRowSize* kColSize >& map);
+	void HandleClick(int x, int y);
+
+	void PlaceTreasure();
 
 private:
-	std::array<Tile, kRowSize* kColSize> tiles_;
+	std::array<Tile, kRowSize* kColSize> tiles_array_;
+	std::array<int, kRowSize* kColSize> map_;
+
+	int treasure_index_;
 
 };
-#endif
