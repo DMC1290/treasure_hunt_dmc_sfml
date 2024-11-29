@@ -8,11 +8,9 @@ class Tile
 public:
 	Tile();
 
-	sf::Sprite GetSandSprite() const { return sand_sprite_; }
-
-	sf::Sprite GetHoleSprite() const { return hole_sprite_; }
-
-	sf::Sprite GetTreasureSprite() const { return chest_sprite_; }
+	sf::Sprite& GetSandSprite() { return sand_sprite_; }
+	sf::Sprite& GetHoleSprite() { return hole_sprite_; }
+	sf::Sprite& GetTreasureSprite() { return chest_sprite_; }
 
 private:
 	sf::Texture sand_texture_;

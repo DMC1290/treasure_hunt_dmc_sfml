@@ -20,27 +20,37 @@ Map::Map()
 
 void Map::DisplayMap(sf::RenderWindow& window)
 {
+	sf::Texture sand;
+	sand.loadFromFile("sprite\\sand_tile.png");
+	sf::Texture hole;
+	hole.loadFromFile("sprite\\hole.png");
+	sf::Texture chest;
+	chest.loadFromFile("sprite\\chest.jpg");
+
 	for (int y = 0; y < kRowSize; ++y)
 	{
 		for (int x = 0; x < kColSize; ++x)
 		{
 			int idx = y * kColSize + x;
 
-			float posX = x * 160;
-			float posY = y * 120;
+			float posX = x * 150;
+			float posY = y * 150;
 
 			if (map_[idx] == 0)
 			{
+				tiles_array_[idx].GetSandSprite().setTexture(sand);
 				tiles_array_[idx].GetSandSprite().setPosition(posX, posY);
 				window.draw(tiles_array_[idx].GetSandSprite());
 			}
 			else if (map_[idx] == 1)
 			{
+				tiles_array_[idx].GetHoleSprite().setTexture(hole);
 				tiles_array_[idx].GetHoleSprite().setPosition(posX, posY);
 				window.draw(tiles_array_[idx].GetHoleSprite());
 			}
 			else if (map_[idx] == 2)
 			{
+				tiles_array_[idx].GetTreasureSprite().setTexture(chest);
 				tiles_array_[idx].GetTreasureSprite().setPosition(posX, posY);
 				window.draw(tiles_array_[idx].GetTreasureSprite());
 			}
